@@ -88,5 +88,6 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 vim.cmd("set number")
+vim.cmd("set relativenumber")
 
 
