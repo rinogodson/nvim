@@ -51,9 +51,9 @@ return {
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>h", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>j", vim.lsp.buf.references, {})
+			vim.keymap.set("n", "<leader>k", vim.lsp.buf.code_action, {})
 			vim.keymap.set("n", "<leader>fd", vim.lsp.buf.format, {})
 		end,
 	},
