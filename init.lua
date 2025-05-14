@@ -16,6 +16,7 @@ vim.cmd("set autoindent")
 vim.cmd("set formatoptions+=r")
 
 vim.g.mapleader = " "
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -33,29 +34,18 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Setup lazy.nvim
 require("lazy").setup({
 	spec = "plugins",
-	-- Configure any other settings here. See the documentation for more details.
-	-- colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "black-metal-theme-neovim" } },
-	-- automatically check for plugin updates
 	ui = {
-		-- These are the default options
 		checker = {
 			enabled = true, -- For enable or disable the checker.
 			notify = false, -- For disable notifications.
 		},
 	},
 })
--- THEMES AVAILABLE:
--- vesper, catppuccin, moonfly
 
 vim.cmd.colorscheme("gorgoroth")
 
