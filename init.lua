@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 vim.cmd("set expandtab")
 
 vim.cmd("set tabstop=2")
@@ -11,11 +13,26 @@ vim.api.nvim_set_keymap("i", "<C-j>", "<Down>", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("i", "<C-k>", "<Up>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 
+--#testing area below
+
+-- Move current line up
+vim.keymap.set("n", "W", ":m .-2<CR>==", { desc = "Move line up" })
+
+-- Move current line down
+vim.keymap.set("n", "S", ":m .+1<CR>==", { desc = "Move line down" })
+
+-- Visual mode - move selection up
+vim.keymap.set("v", "W", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+-- Visual mode - move selection down
+vim.keymap.set("v", "S", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+
+--# testing area above
+
 vim.cmd("set smartindent")
 vim.cmd("set autoindent")
 vim.cmd("set formatoptions+=r")
 
-vim.g.mapleader = " "
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
