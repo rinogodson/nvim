@@ -42,8 +42,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.maplocalleader = "\\"
-
 require("lazy").setup({
 	spec = "plugins",
 	install = { colorscheme = { "black-metal-theme-neovim" } },
@@ -54,8 +52,6 @@ require("lazy").setup({
 		},
 	},
 })
-
-vim.cmd.colorscheme("gorgoroth")
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })

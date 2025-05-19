@@ -55,8 +55,6 @@ return {
         },
       })
 
-      -- setup must be called before loading
-      vim.cmd("colorscheme kanso")
     end,
   },
   {
@@ -89,6 +87,7 @@ return {
         },
       })
       require("black-metal").load()
+      vim.cmd.colorscheme("gorgoroth")
     end,
   },
   {
@@ -132,8 +131,6 @@ return {
           end,
         },
       })
-
-      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }
