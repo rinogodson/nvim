@@ -5,7 +5,7 @@ vim.cmd("set nowrap")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
-
+vim.cmd("TailwindConcealEnable")
 vim.cmd("set fillchars=eob:`")
 
 vim.api.nvim_set_keymap("i", "<C-h>", "<Left>", { noremap = true, silent = true })
