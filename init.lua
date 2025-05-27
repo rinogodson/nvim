@@ -13,10 +13,10 @@ vim.api.nvim_set_keymap("i", "<C-k>", "<Up>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 
 
-vim.keymap.set("n", "W", ":m .-2<CR>==", { desc = "Move line up" })
-vim.keymap.set("n", "S", ":m .+1<CR>==", { desc = "Move line down" })
-vim.keymap.set("v", "W", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
-vim.keymap.set("v", "S", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("n", "}", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("n", "{", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("v", "}", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+vim.keymap.set("v", "{", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 
 
 vim.cmd("set smartindent")
@@ -46,7 +46,7 @@ require("lazy").setup({
 	install = { colorscheme = { "black-metal-theme-neovim" } },
 	ui = {
 		checker = {
-			enabled = true, -- For enable or disable the checker.
+			enabled = true, -- For enable or disable the checker.ini
 			notify = false, -- For disable notifications.
 		},
 	},
@@ -83,5 +83,3 @@ vim.api.nvim_create_autocmd("User", {
 
 vim.cmd("set number")
 vim.cmd("set relativenumber")
-
-

@@ -72,6 +72,7 @@ return {
 			vim.keymap.set("n", "<leader>j", vim.lsp.buf.references, {})
 			vim.keymap.set("n", "<leader>k", vim.lsp.buf.code_action, {})
 			vim.keymap.set("n", "<leader>fd", vim.lsp.buf.format, {})
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 		end,
 	},
 	{
