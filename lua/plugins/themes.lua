@@ -1,5 +1,14 @@
 return {
 	{
+		"vague2k/vague.nvim",
+		config = function()
+			-- NOTE: you do not need to call setup if you don't want to.
+			require("vague").setup({
+				-- optional configuration here
+			})
+		end,
+	},
+	{
 		"webhooked/kanso.nvim",
 		lazy = false,
 		priority = 1000,
@@ -45,9 +54,6 @@ return {
 						},
 					},
 				}),
-				overrides = function(colors) -- add/modify highlights
-					return {}
-				end,
 				theme = "zen", -- Load "zen" theme
 				background = { -- map the value of 'background' option to a theme
 					dark = "zen", -- try "ink" !
@@ -86,8 +92,6 @@ return {
 				},
 			})
 			require("black-metal").load()
-
-			vim.cmd.colorscheme("gorgoroth")
 		end,
 	},
 	{
