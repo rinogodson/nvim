@@ -54,12 +54,15 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd.colorscheme("gorgoroth")
+vim.cmd.colorscheme("moonfly")
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
+vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
 
 -- Transparent completion menu and borders
 vim.cmd("highlight Pmenu guibg=NONE guifg=#d8dee9") -- Transparent bg, light text
