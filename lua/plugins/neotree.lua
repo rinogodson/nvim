@@ -7,9 +7,9 @@ return {
   window = {
     -- ... other window options ...
     position = "float",
-    popup = {
-      background = "#00000000",
-    },
+--    popup = {
+--      background = "#00000000",
+--    },
   },
   config = function()
     require("neo-tree").setup({
