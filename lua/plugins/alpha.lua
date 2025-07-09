@@ -59,8 +59,8 @@ return {
 			--      [[ / /\  |  __| (_) \ V /| | | | | | | ]],
 			--      [[ \_\ \/ \___|\___/ \_/ |_|_| |_| |_| ]],
 			--      [[                                     ]],
-			[[    ]],
-      [[neovim]]
+			[[  ]],
+      [[vim]]
 		}
 		dashboard.section.header.val = logo
 		dashboard.section.header.opts = {

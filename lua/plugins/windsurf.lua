@@ -1,4 +1,4 @@
-return {
-	"Exafunction/windsurf.vim",
-	event = "BufEnter",
+ return {
+-- 	"Exafunction/windsurf.vim",
+-- 	event = "BufEnter",
 }
