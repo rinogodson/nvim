@@ -2,45 +2,39 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    -- Define a theme with solid black background
     local black_theme = {
       normal = {
-        a = { fg = "#98c379", bg = "#000000" },
-        b = { fg = "#8C8172", bg = "#000000" },
-        c = { fg = "#abb2bf", bg = "#000000" },
+        a = { fg = "#98c379", bg = "#04070a" },
+        b = { fg = "#8C8172", bg = "#04070a" },
+        c = { fg = "#abb2bf", bg = "#04070a" },
       },
       insert = {
-        a = { fg = "#e5c07b", bg = "#000000" },
-        b = { fg = "#8C8172", bg = "#000000" },
-        c = { fg = "#abb2bf", bg = "#000000" },
+        a = { fg = "#e5c07b", bg = "#04070a" },
+        b = { fg = "#8C8172", bg = "#04070a" },
+        c = { fg = "#abb2bf", bg = "#04070a" },
       },
       visual = {
-        a = { fg = "#c678dd", bg = "#000000" },
-        b = { fg = "#8C8172", bg = "#000000" },
-        c = { fg = "#abb2bf", bg = "#000000" },
+        a = { fg = "#c678dd", bg = "#04070a" },
+        b = { fg = "#8C8172", bg = "#04070a" },
+        c = { fg = "#abb2bf", bg = "#04070a" },
       },
       replace = {
-        a = { fg = "#e06c75", bg = "#000000" },
-        b = { fg = "#8C8172", bg = "#000000" },
-        c = { fg = "#abb2bf", bg = "#000000" },
+        a = { fg = "#e06c75", bg = "#04070a" },
+        b = { fg = "#8C8172", bg = "#04070a" },
+        c = { fg = "#abb2bf", bg = "#04070a" },
       },
       inactive = {
-        a = { fg = "#5c6370", bg = "#000000" },
-        b = { fg = "#5c6370", bg = "#000000" },
-        c = { fg = "#5c6370", bg = "#000000" },
+        a = { fg = "#5c6370", bg = "#04070a" },
+        b = { fg = "#5c6370", bg = "#04070a" },
+        c = { fg = "#5c6370", bg = "#04070a" },
       },
-    } -- Set highlight groups to enforce black background
-    vim.api.nvim_set_hl(0, "LualineNormal", { bg = "#000000" })
-    vim.api.nvim_set_hl(0, "LualineInsert", { bg = "#000000" })
-    vim.api.nvim_set_hl(0, "LualineVisual", { bg = "#000000" })
-    vim.api.nvim_set_hl(0, "LualineReplace", { bg = "#000000" })
-    vim.api.nvim_set_hl(0, "LualineInactive", { bg = "#000000" })
+    }
 
     require("lualine").setup({
       options = {
         theme = black_theme,
-        section_separators = { left = "", right = "" },
-        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
+        component_separators = { left = "", right = "" },
         icons_enabled = true,
         globalstatus = true,
         disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
@@ -52,7 +46,6 @@ return {
             fmt = function(str)
               return str:sub(1, 1)
             end,
-            icon = "♥",
           },
         },
         lualine_b = {
@@ -65,24 +58,17 @@ return {
             file_status = true,
             path = 1,
             shorting_target = 40,
-            symbols = { modified = "[+]", readonly = "[-]", unnamed = "[No Name]" },
+            symbols = { modified = "[+]", readonly = "[-]", unnamed = "󰇥" },
           },
         },
         lualine_x = {
-          {
-            "diagnostics",
-            sources = { "nvim_lsp" },
-            symbols = { error = " ", warn = " ", info = " ", hint = " " },
-          },
           { "encoding" },
-          { "fileformat", icons_enabled = true },
         },
         lualine_y = {
-          { "filetype", colored = true,  icon_only = true },
-          { "progress", separator = " ", padding = { left = 1, right = 0 } },
+          { "progress", separator = " ", padding = { left = 0, right = 0 } },
         },
         lualine_z = {
-          { "location", padding = { left = 0, right = 1 } },
+          { "location", padding = { left = 0, right = 0 } },
         },
       },
       inactive_sections = {
@@ -95,22 +81,28 @@ return {
       },
       tabline = {
         lualine_a = {
+          { "filetype", colored = true, icon_only = true },
+        },
+        lualine_b = {
           {
-            "tabs",
-            mode = 2,
-            max_length = vim.o.columns * 2 / 3,
-            fmt = function(name, context)
-              local bufnr = vim.fn.tabpagebuflist(context.tabnr)[1]
-              local modified = vim.fn.getbufvar(bufnr, "&modified") == 1 and "[+]" or ""
-              return name .. modified
-            end,
+            "diagnostics",
+            sources = { "nvim_lsp" },
+            symbols = { error = " ", warn = " ", info = " ", hint = " " },
           },
         },
-        lualine_b = {},
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {},
+        lualine_z = {
+          {
+            "tabs",
+            mode = 1,
+            max_length = vim.o.columns * 2 / 3,
+            fmt = function(name, _)
+              return name
+            end,
+          },
+        },
       },
       extensions = { "fugitive", "quickfix", "nvim-tree" },
     })

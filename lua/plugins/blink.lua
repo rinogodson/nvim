@@ -1,59 +1,38 @@
 return {
-  "saghen/blink.cmp",
-  dependencies = {
-    "rafamadriz/friendly-snippets",
-    "L3MON4D3/LuaSnip",
-  },
-  lazy = false, -- Ensure blink.cmp loads early
+  "Saghen/blink.cmp",
+  event = "InsertEnter",
   version = "1.*",
-  ---@module 'blink.cmp'
-  ---@type blink.cmp.Config
+  dependencies = { "rafamadriz/friendly-snippets", "L3MON4D3/LuaSnip" },
   opts = {
-    keymap = { preset = "default" },
-    appearance = {
-      nerd_font_variant = "mono",
-      kind_icons = {
-        Snippet = "",
-        Text = "",
-        Method = "",
-        Function = "",
-        Constructor = "",
-        Variable = "󱊍",
-        Module = "",
-        Value = "",
-        Enum = "",
-        Keyword = "♥",
-        Color = "",
-        Folder = "",
-        EnumMember = "",
-        Constant = "",
-      },
+    sources = {
+      default = { "lsp", "snippets", "buffer", "path" },
     },
+    fuzzy = { implementation = "lua" },
     completion = {
       documentation = {
         auto_show = true,
         window = {
-          border = "single",
-          winblend = 5,
+          border = "double",
         },
       },
       menu = {
-        draw = { treesitter = { "lsp" } },
-        border = "none",
-        winblend = 15,
+        border = "single",
+        auto_show = true,
+        draw = {
+          padding = { 0, 1 },
+          columns = {
+            { "label", "label_description", gap = 1 },
+            { "kind_icon", "kind", gap = 1 },
+          },
+        },
       },
     },
     signature = {
       enabled = true,
       window = {
-        border = "none",
+        border = "single",
         winblend = 15,
       },
     },
-    sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
-    },
-    fuzzy = { implementation = "prefer_rust_with_warning" },
   },
-  -- opts_extend = { "sources.default" }, -- Removed as it's redundant with sources.default in opts
 }
