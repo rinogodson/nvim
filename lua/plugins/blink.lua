@@ -2,7 +2,7 @@ return {
   "Saghen/blink.cmp",
   event = "InsertEnter",
   version = "1.*",
-  dependencies = { "rafamadriz/friendly-snippets", "L3MON4D3/LuaSnip" },
+  dependencies = { "rafamadriz/friendly-snippets", "L3MON4D3/LuaSnip", "Exafunction/codeium.nvim" },
   opts = {
     sources = {
       default = { "lsp", "snippets", "buffer", "path" },

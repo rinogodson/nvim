@@ -18,3 +18,8 @@ vim.o.laststatus = 3
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("colorscheme kanso")
+
+vim.opt.ignorecase = true
+vim.opt.winborder = "rounded"
+vim.opt.cursorline = true
+vim.opt.wrap = false
