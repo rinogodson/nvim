@@ -31,7 +31,7 @@ key.set("n", "<leader>r", builtin.registers, { desc = "Telescope registers" })
 
 key.set("n", "<leader>j", "<cmd>Telescope lsp_references<CR>", { desc = "References" })
 key.set("n", "gD", vim.lsp.buf.declaration, { desc = "Declaration" })
-key.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "Definitions" })
+key.set("n", "<leader>h", "<cmd>Telescope lsp_definitions<CR>", { desc = "Definitions" })
 key.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", { desc = "Implementations" })
 key.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "Type Definitions" })
 key.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })

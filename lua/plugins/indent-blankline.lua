@@ -7,7 +7,7 @@ return {
   opts = {},
   config = function()
     require("ibl").setup({
-      indent = { highlight = highlight, char = "│" },
+      indent = { highlight = highlight, char = "╎" },
       whitespace = {
         highlight = highlight,
         remove_blankline_trail = false,

@@ -17,6 +17,9 @@ return {
       cssls = {},
       tailwindcss = {},
       pyright = {},
+      asm_lsp = {},
+      ast_grep = {},
+      clangd = {},
     },
   },
 
