@@ -1,7 +1,6 @@
 require("config.lazy")
 require("keymaps")
 
-vim.cmd("colorscheme kanso")
 vim.cmd("set expandtab")
 vim.cmd("set nowrap")
 vim.cmd("set tabstop=2")

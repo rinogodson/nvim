@@ -27,6 +27,10 @@ key.set("n", "<leader>b", builtin.buffers, { desc = "Telescope buffers" })
 key.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 key.set("n", "<leader>r", builtin.registers, { desc = "Telescope registers" })
 
+vim.keymap.set("n", "<leader>,", function()
+  vim.fn.jobstart({ "love", "." }, { detach = true })
+end, { desc = "Run Love2D game" })
+
 -- lsp keymaps
 
 key.set("n", "<leader>j", "<cmd>Telescope lsp_references<CR>", { desc = "References" })
@@ -49,3 +53,5 @@ end
 key.set("n", "L", bordered_diag, { desc = "Line Diagnostics" })
 vim.keymap.set("n", "K", bordered_hover, { desc = "LSP: Show hover documentation" })
 key.set("n", "<leader>rs", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
+vim.keymap.set("n", "n", "nzzzv", { noremap = true, silent = true })
+vim.keymap.set("n", "N", "Nzzzv", { noremap = true, silent = true })

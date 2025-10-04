@@ -20,6 +20,7 @@ return {
       asm_lsp = {},
       ast_grep = {},
       clangd = {},
+      svelte = {},
     },
   },
 
