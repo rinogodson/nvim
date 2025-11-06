@@ -1,4 +1,5 @@
 require("config.lazy")
+require("config.lsp")
 require("keymaps")
 
 vim.cmd("set expandtab")

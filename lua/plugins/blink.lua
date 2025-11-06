@@ -4,9 +4,6 @@ return {
   version = "1.*",
   dependencies = { "rafamadriz/friendly-snippets", "L3MON4D3/LuaSnip", "Exafunction/codeium.nvim" },
   opts = {
-    sources = {
-      default = { "lsp", "snippets", "buffer", "path" },
-    },
     fuzzy = { implementation = "lua" },
     completion = {
       documentation = {

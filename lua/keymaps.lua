@@ -33,25 +33,31 @@ end, { desc = "Run Love2D game" })
 
 -- lsp keymaps
 
-key.set("n", "<leader>j", "<cmd>Telescope lsp_references<CR>", { desc = "References" })
-key.set("n", "gD", vim.lsp.buf.declaration, { desc = "Declaration" })
-key.set("n", "<leader>h", "<cmd>Telescope lsp_definitions<CR>", { desc = "Definitions" })
-key.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", { desc = "Implementations" })
-key.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "Type Definitions" })
-key.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
-key.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-key.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Diagnostics (Buffer)" })
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+  callback = function(ev)
+    key.set("n", "<leader>j", "<cmd>Telescope lsp_references<CR>", { desc = "References" })
+    key.set("n", "gD", vim.lsp.buf.declaration, { desc = "Declaration" })
+    key.set("n", "<leader>h", "<cmd>Telescope lsp_definitions<CR>", { desc = "Definitions" })
+    key.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", { desc = "Implementations" })
+    key.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "Type Definitions" })
+    key.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+    key.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
+    key.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Diagnostics (Buffer)" })
 
-local function bordered_hover()
-  vim.lsp.buf.hover({ border = "rounded" })
-end
+    local function bordered_hover()
+      vim.lsp.buf.hover({ border = "rounded" })
+    end
 
-local function bordered_diag()
-  vim.diagnostic.open_float({ border = "rounded" })
-end
+    local function bordered_diag()
+      vim.diagnostic.open_float({ border = "rounded" })
+    end
 
-key.set("n", "L", bordered_diag, { desc = "Line Diagnostics" })
-vim.keymap.set("n", "K", bordered_hover, { desc = "LSP: Show hover documentation" })
-key.set("n", "<leader>rs", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
+    key.set("n", "L", bordered_diag, { desc = "Line Diagnostics" })
+    vim.keymap.set("n", "K", bordered_hover, { desc = "LSP: Show hover documentation" })
+    key.set("n", "<leader>rs", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
+  end,
+})
+
 vim.keymap.set("n", "n", "nzzzv", { noremap = true, silent = true })
 vim.keymap.set("n", "N", "Nzzzv", { noremap = true, silent = true })
