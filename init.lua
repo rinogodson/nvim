@@ -97,8 +97,6 @@ vim.api.nvim_create_autocmd("CursorMoved", {
           break -- Found a supporting client, no need to check others
         end
       end
-
-      -- 3. Proceed only if an LSP is active AND supports the feature
       if supports_highlight then
         vim.lsp.buf.clear_references()
         vim.lsp.buf.document_highlight()

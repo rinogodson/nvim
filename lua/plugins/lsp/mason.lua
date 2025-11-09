@@ -11,6 +11,7 @@ return {
         "svelte",
         "lua_ls",
         "eslint",
+        "marksman",
       },
     },
     dependencies = {
