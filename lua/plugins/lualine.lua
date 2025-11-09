@@ -62,10 +62,14 @@ return {
           },
         },
         lualine_x = {
-          { "encoding" },
+          {
+            "encoding",
+          },
         },
         lualine_y = {
-          { "progress", separator = " ", padding = { left = 0, right = 0 } },
+          function()
+            return require("triforce.lualine").streak()
+          end,
         },
         lualine_z = {
           { "location", padding = { left = 0, right = 0 } },
@@ -74,8 +78,10 @@ return {
       inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { "filename" },
-        lualine_x = { "location" },
+        lualine_c = {},
+        lualine_x = {
+          "location",
+        },
         lualine_y = {},
         lualine_z = {},
       },
