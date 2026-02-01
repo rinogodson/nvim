@@ -1,6 +1,7 @@
 require("config.lazy")
 require("config.lsp")
 require("keymaps")
+require("ai")
 
 vim.cmd("set expandtab")
 vim.cmd("set nowrap")
@@ -18,6 +19,18 @@ vim.o.laststatus = 3
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("colorscheme kanso")
+
+-- vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#000000" })
+--
+-- vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "#000000", fg = "#313244" }) -- fg is the line color
+--
+-- vim.api.nvim_set_hl(0, "BlinkCmpKind", { bg = "NONE" })
+--
+-- vim.api.nvim_set_hl(0, "BlinkCmpLabel", { bg = "NONE" })
+-- vim.api.nvim_set_hl(0, "BlinkCmpLabelMatch", { fg = "#89b4fa", bg = "NONE", bold = true })
+--
+-- vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "#000000" })
+-- vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { bg = "#000000", fg = "#313244" })
 
 vim.opt.ignorecase = true
 vim.opt.winborder = "rounded"

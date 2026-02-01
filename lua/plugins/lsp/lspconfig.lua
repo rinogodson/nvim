@@ -1,6 +1,10 @@
 return {
   "neovim/nvim-lspconfig",
-
+  dependencies = {
+    "mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "Saghen/blink.cmp",
+  },
   opts = {
     servers = {
       lua_ls = {},
@@ -13,6 +17,7 @@ return {
       ast_grep = {},
       clangd = {},
       svelte = {},
+      tinymist = {},
     },
   },
 

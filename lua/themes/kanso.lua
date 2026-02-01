@@ -5,7 +5,7 @@ return {
   config = function()
     require("kanso").setup({
       background = { dark = "zen", light = "zen" },
-      foreground = "saturated",
+      -- foreground = "saturated",
     })
   end,
 }

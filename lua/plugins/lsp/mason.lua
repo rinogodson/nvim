@@ -10,8 +10,8 @@ return {
         "tailwindcss",
         "svelte",
         "lua_ls",
-        "eslint",
         "marksman",
+        "tinymist",
       },
     },
     dependencies = {

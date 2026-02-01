@@ -27,6 +27,7 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
     { import = "plugins.lsp" },
+    { import = "plugins.ai" },
     { import = "themes" },
   },
   -- Configure any other settings here. See the documentation for more details.
