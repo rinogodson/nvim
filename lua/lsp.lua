@@ -1,0 +1,10 @@
+vim.lsp.enable({
+	"vtsls",
+	"html",
+	"cssls",
+	"tailwindcss",
+	"svelte",
+	"lua_ls",
+	"marksman",
+	"tinymist",
+})
