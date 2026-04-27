@@ -2,6 +2,7 @@ require("keymaps")
 require("plugs")
 require("plugs-config")
 require("lsp")
+require("ai")
 
 vim.cmd("set expandtab")
 vim.cmd("set nowrap")
@@ -34,6 +35,21 @@ vim.opt.wrap = false
 
 vim.o.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
+local bckg = "#181b1b"
+vim.api.nvim_set_hl(0, "SignColumn", { bg = bckg })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "#1a1d1e", fg = "#665c54" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#312d2b", fg = "#ebdbb2" })
+vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = bckg, fg = "#b8bb26" })
+vim.api.nvim_set_hl(0, "GitSignsChange", { bg = bckg, fg = "#fabd2f" })
+vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = bckg, fg = "#fb4934" })
+vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#fb4934" })
+vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = "#fabd2f" })
+vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { fg = "#d3869b" })
+vim.api.nvim_set_hl(0, "DiagnosticSignHint", { fg = "#b8bb26" })
+vim.api.nvim_set_hl(0, "DiagnosticSignHint", { fg = "#b8bb26" })
+vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { fg = "#b8bb26", bg = bckg })
+vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { fg = "#ebdbb2", bg = bckg })
+vim.api.nvim_set_hl(0, "NeoTreeNormal", { fg = "#ebdbb2", bg = bckg })
 
 -- highlight yank
 vim.api.nvim_create_autocmd("TextYankPost", {
