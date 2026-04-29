@@ -35,7 +35,7 @@ vim.pack.add({
 	-- AI & Tools
 	"https://github.com/zbirenbaum/copilot.lua",
 	"https://github.com/fang2hou/blink-copilot",
-	-- "https://github.com/wakatime/vim-wakatime",
+	"https://github.com/wakatime/vim-wakatime",
 
 	-- Language Specific
 	"https://github.com/mrcjkb/rustaceanvim",
