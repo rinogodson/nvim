@@ -143,7 +143,7 @@ vim.api.nvim_create_autocmd("CursorMovedI", {
 
 vim.api.nvim_create_autocmd("VimLeavePre", {
   callback = function()
-    for _, client in ipairs(vim.lsp.get_active_clients()) do
+    for _, client in ipairs(vim.lsp.get_clients()) do
       client.stop()
     end
   end,

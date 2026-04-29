@@ -18,7 +18,7 @@ vim.pack.add({
 	"https://github.com/j-hui/fidget.nvim",
 	"https://github.com/lukas-reineke/indent-blankline.nvim",
 	"https://github.com/karb94/neoscroll.nvim",
-	"https://github.com/folke/flash.nvim",
+	"https://github.com/rlane/pounce.nvim",
 	"https://github.com/goolord/alpha-nvim",
 	"https://github.com/echasnovski/mini.icons",
 	"https://github.com/echasnovski/mini.surround",
@@ -30,6 +30,7 @@ vim.pack.add({
 	"https://github.com/mfussenegger/nvim-lint",
 	"https://github.com/lewis6991/gitsigns.nvim",
 	"https://github.com/kdheepak/lazygit.nvim",
+	"https://github.com/rafamadriz/friendly-snippets",
 
 	-- AI & Tools
 	"https://github.com/zbirenbaum/copilot.lua",
@@ -39,18 +40,10 @@ vim.pack.add({
 	-- Language Specific
 	"https://github.com/mrcjkb/rustaceanvim",
 	"https://github.com/saecki/crates.nvim",
-	"https://github.com/akinsho/flutter-tools.nvim",
-	"https://github.com/chomosuke/typst-preview.nvim",
 
 	-- Fun & Extras
 	"https://github.com/eandrju/cellular-automaton.nvim",
 	"https://github.com/ThePrimeagen/vim-be-good",
 	"https://github.com/johnpmitsch/vai.nvim",
 	"https://github.com/code-biscuits/nvim-biscuits",
-
-	-- Themes
-	"https://github.com/webhooked/kanso.nvim",
-	"https://github.com/oskarnurm/koda.nvim",
-	"https://github.com/AlexvZyl/nordic.nvim",
-	"https://github.com/Shatur/neovim-ayu",
 })
