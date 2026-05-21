@@ -1,4 +1,3 @@
--- lsp/sourcekit.lua
 return {
 	cmd = { "sourcekit-lsp" },
 	filetypes = { "swift", "objective-c", "objective-cpp" },
