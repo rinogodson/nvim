@@ -23,7 +23,7 @@ key.set("n", "<leader>hc", "<cmd>WakaTimeToday<CR>")
 local Snacks = require("snacks")
 
 key.set("n", "<leader>m", function()
-	require("mini.files").open()
+	vim.cmd("Neotree filesystem toggle")
 end)
 
 key.set("n", "<leader>n", function()
