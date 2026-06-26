@@ -4,7 +4,7 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.wrap = false
-vim.opt.fillchars = { eob = "`" }
+vim.opt.fillchars = { eob = "𜸎" }
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.formatoptions:append("r")
@@ -101,6 +101,8 @@ vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#772620" })
 vim.api.nvim_set_hl(0, "GitSignsChangedelete", { fg = "#772620" })
 vim.api.nvim_set_hl(0, "GitSignsTopdelete", { fg = "#772620" })
 vim.api.nvim_set_hl(0, "GitSignsUntracked", { fg = "#706A59" })
+
+-- vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = "#E06C75", nocombine = true })
 
 -- highlight yank
 vim.api.nvim_create_autocmd("TextYankPost", {
