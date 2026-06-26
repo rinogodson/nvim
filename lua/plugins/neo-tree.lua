@@ -9,11 +9,12 @@ return {
 	config = function()
 		require("neo-tree").setup({
 			popup_border_style = "solid",
+			enable_git_status = false,
 			default_component_configs = {
 				icon = {
-					folder_closed = "󱨧",
-					folder_open = "",
-					folder_empty = "󰮞",
+					folder_closed = "",
+					folder_open = "",
+					folder_empty = "󰜌",
 				},
 				git_status = {
 					symbols = {

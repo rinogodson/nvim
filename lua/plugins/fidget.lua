@@ -1,2 +1,1 @@
-return	{ "j-hui/fidget.nvim", lazy=false, config = true }
-
+return { "j-hui/fidget.nvim", lazy = false, config = true }

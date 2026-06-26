@@ -1,8 +1,9 @@
+vim.loader.enable()
 vim.opt.expandtab = true
-vim.opt.wrap = false
+vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.wrap = false
 vim.opt.fillchars = { eob = "`" }
 vim.opt.smartindent = true
 vim.opt.autoindent = true
@@ -16,7 +17,26 @@ vim.opt.ignorecase = true
 vim.opt.winborder = "rounded"
 vim.opt.cursorline = true
 vim.opt.wrap = false
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 500
+vim.opt.colorcolumn = "80"
+vim.opt.signcolumn = "yes:1"
+vim.diagnostic.config({
+	severity_sort = true,
+	signs = {
+		numhl = {
+			[vim.diagnostic.severity.ERROR] = "DiagnosticSignErrorNum",
+			[vim.diagnostic.severity.WARN] = "DiagnosticSignWarnNum",
+			[vim.diagnostic.severity.INFO] = "DiagnosticSignInfoNum",
+			[vim.diagnostic.severity.HINT] = "DiagnosticSignHintNum",
+		},
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "",
+		},
+	},
+})
 
 local builtins = {
 	"netrw",
@@ -56,7 +76,7 @@ vim.api.nvim_create_autocmd("FileType", {
 local bckg = "#181b1b"
 vim.api.nvim_set_hl(0, "SignColumn", { bg = bckg })
 vim.api.nvim_set_hl(0, "LineNr", { bg = "#1a1d1e", fg = "#665c54" })
-vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#312d2b", fg = "#ebdbb2" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#312d2b", fg = "#ebdbb2", bold = true })
 vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = bckg, fg = "#b8bb26" })
 vim.api.nvim_set_hl(0, "GitSignsChange", { bg = bckg, fg = "#fabd2f" })
 vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = bckg, fg = "#fb4934" })
@@ -64,10 +84,23 @@ vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#fb4934" })
 vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = "#fabd2f" })
 vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { fg = "#d3869b" })
 vim.api.nvim_set_hl(0, "DiagnosticSignHint", { fg = "#b8bb26" })
-vim.api.nvim_set_hl(0, "DiagnosticSignHint", { fg = "#b8bb26" })
+
+vim.api.nvim_set_hl(0, "DiagnosticSignErrorNum", { bg = "#772620", fg = "#fb4934", bold = true })
+vim.api.nvim_set_hl(0, "DiagnosticSignWarnNum", { bg = "#775E14", fg = "#fabd2f" })
+vim.api.nvim_set_hl(0, "DiagnosticSignInfoNum", { bg = "#312d2b" })
+vim.api.nvim_set_hl(0, "DiagnosticSignHintNum", { bg = "#312d2b" })
+
 vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { fg = "#b8bb26", bg = bckg })
 vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { fg = "#ebdbb2", bg = bckg })
 vim.api.nvim_set_hl(0, "NeoTreeNormal", { fg = "#ebdbb2", bg = bckg })
+vim.api.nvim_set_hl(0, "MsgArea", { fg = "#928374" })
+
+vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#5B5E14" })
+vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#775E14" })
+vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#772620" })
+vim.api.nvim_set_hl(0, "GitSignsChangedelete", { fg = "#772620" })
+vim.api.nvim_set_hl(0, "GitSignsTopdelete", { fg = "#772620" })
+vim.api.nvim_set_hl(0, "GitSignsUntracked", { fg = "#706A59" })
 
 -- highlight yank
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -126,3 +159,22 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 		vim.opt_local.cursorline = false
 	end,
 })
+--
+-- -- cursorline changes color on input mode here
+-- local cursorline_group = vim.api.nvim_create_augroup("CursorLineModeColor", { clear = true })
+--
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+-- 	group = cursorline_group,
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.api.nvim_set_hl(0, "CursorLine", { bg = "#312d2b" })
+-- 	end,
+-- })
+--
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+-- 	group = cursorline_group,
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3C3836" })
+-- 	end,
+-- })

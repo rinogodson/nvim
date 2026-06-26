@@ -2,29 +2,31 @@ vim.g.mapleader = " "
 
 local key = vim.keymap
 
+key.set("n", "<leader>ai", "<cmd>PiSendFile<CR>", { silent = true })
+key.set("v", "<leader>ai", "<cmd>PiSendSelection<CR>", { silent = true })
+key.set("n", "<leader>aic", "<cmd>PiCancel<CR>", { silent = true })
+
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("i", "kj", "<Esc>")
 
-key.set("n", "<leader>w", "<cmd>write!<CR>", { silent = true, desc = "file saving thing :)" })
+vim.keymap.set("n", "\\", "<cmd>e<CR>", { silent = true })
+
+key.set("n", "<leader>w", "<cmd>write!<CR>", { silent = true })
 key.set({ "n", "i", "v" }, "<C-h>", "<Left>")
 key.set({ "n", "i", "v" }, "<C-l>", "<Right>")
 key.set({ "n", "i", "v" }, "<C-j>", "<Down>")
 key.set({ "n", "i", "v" }, "<C-k>", "<Up>")
 
-key.set("n", "<leader>lg", "<cmd>LazyGit<CR>", { silent = true, desc = "file saving thing :)" })
+key.set("n", "<leader>lg", "<cmd>LazyGit<CR>", { silent = true })
 
-key.set("n", ">", ":m .-2<CR>==", { desc = "Move line up" })
-key.set("n", "<", ":m .+1<CR>==", { desc = "Move line down" })
-key.set("v", ">", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
-key.set("v", "<", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+key.set("n", ">", ":m .-2<CR>==", {})
+key.set("n", "<", ":m .+1<CR>==", {})
+key.set("v", ">", ":m '<-2<CR>gv=gv", {})
+key.set("v", "<", ":m '>+1<CR>gv=gv", {})
 
 key.set("n", "<leader>hc", "<cmd>WakaTimeToday<CR>")
 
 local Snacks = require("snacks")
-
-key.set("n", "<leader>m", function()
-	vim.cmd("Neotree filesystem toggle")
-end)
 
 key.set("n", "<leader>n", function()
 	Snacks.picker.files()
@@ -35,8 +37,13 @@ end)
 key.set("n", "<leader>fg", function()
 	Snacks.picker.grep()
 end)
+
 key.set("n", "<leader>r", function()
 	Snacks.picker.registers()
+end)
+
+key.set("n", "<leader>m", function()
+	vim.cmd("Neotree filesystem toggle")
 end)
 
 key.set("n", "s", function()

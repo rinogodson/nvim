@@ -1,5 +1,10 @@
 {
     "diagnostics.globals": [
         "vim"
-    ]
+    ],
+    "workspace": {
+        "library": [
+            "/Users/rinogodson/.local/share/nvim/lazy/opencode.nvim"
+        ]
+    }
 }
